@@ -1,0 +1,41 @@
+.boton:hover{
+    background-color: green;
+    color: white;
+}
+
+.boton{
+    padding: 2rem 7rem;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.boton::before{
+    content: 'pasa por encima';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-transform: uppercase;
+    transition: .1 ease;
+}
+
+.boton::after{
+    content: '¡Hecho!';
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    text-transform: uppercase;
+    transition: .1 ease;
+    opacity: 0;
+}
+
+.boton:hover::before{
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+}
+
+.boton:hover::after{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
